@@ -13,10 +13,12 @@
 		9906BAF62833A837004DE23D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9906BAF42833A837004DE23D /* Main.storyboard */; };
 		9906BAF82833A837004DE23D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9906BAF72833A837004DE23D /* Assets.xcassets */; };
 		9906BAFB2833A837004DE23D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9906BAF92833A837004DE23D /* LaunchScreen.storyboard */; };
+		9906BB032833AF93004DE23D /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9906BB022833AF93004DE23D /* GameView.swift */; };
+		9906BB052838EB40004DE23D /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9906BB042838EB40004DE23D /* GameOverView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9906BAEB2833A837004DE23D /* FootballTrivia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FootballTrivia.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9906BAEB2833A837004DE23D /* FootballTrivia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = FootballTrivia.app; path = "/Users/liron/Desktop/iOS/FootballTrivia/build/Debug-iphoneos/FootballTrivia.app"; sourceTree = "<absolute>"; };
 		9906BAEE2833A837004DE23D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9906BAF02833A837004DE23D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9906BAF22833A837004DE23D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -24,6 +26,8 @@
 		9906BAF72833A837004DE23D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9906BAFA2833A837004DE23D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9906BAFC2833A837004DE23D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9906BB022833AF93004DE23D /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		9906BB042838EB40004DE23D /* GameOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,16 +45,7 @@
 			isa = PBXGroup;
 			children = (
 				9906BAED2833A837004DE23D /* FootballTrivia */,
-				9906BAEC2833A837004DE23D /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		9906BAEC2833A837004DE23D /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				9906BAEB2833A837004DE23D /* FootballTrivia.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		9906BAED2833A837004DE23D /* FootballTrivia */ = {
@@ -59,6 +54,8 @@
 				9906BAEE2833A837004DE23D /* AppDelegate.swift */,
 				9906BAF02833A837004DE23D /* SceneDelegate.swift */,
 				9906BAF22833A837004DE23D /* HomeView.swift */,
+				9906BB022833AF93004DE23D /* GameView.swift */,
+				9906BB042838EB40004DE23D /* GameOverView.swift */,
 				9906BAF42833A837004DE23D /* Main.storyboard */,
 				9906BAF72833A837004DE23D /* Assets.xcassets */,
 				9906BAF92833A837004DE23D /* LaunchScreen.storyboard */,
@@ -74,6 +71,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9906BAFF2833A837004DE23D /* Build configuration list for PBXNativeTarget "FootballTrivia" */;
 			buildPhases = (
+				CDF7B9301B6272C48C6B42A7 /* [CP] Check Pods Manifest.lock */,
 				9906BAE72833A837004DE23D /* Sources */,
 				9906BAE82833A837004DE23D /* Frameworks */,
 				9906BAE92833A837004DE23D /* Resources */,
@@ -111,7 +109,7 @@
 				Base,
 			);
 			mainGroup = 9906BAE22833A837004DE23D;
-			productRefGroup = 9906BAEC2833A837004DE23D /* Products */;
+			productRefGroup = 9906BAE22833A837004DE23D;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -133,13 +131,40 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		CDF7B9301B6272C48C6B42A7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FootballTrivia-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9906BAE72833A837004DE23D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9906BB052838EB40004DE23D /* GameOverView.swift in Sources */,
 				9906BAF32833A837004DE23D /* HomeView.swift in Sources */,
 				9906BAEF2833A837004DE23D /* AppDelegate.swift in Sources */,
+				9906BB032833AF93004DE23D /* GameView.swift in Sources */,
 				9906BAF12833A837004DE23D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
