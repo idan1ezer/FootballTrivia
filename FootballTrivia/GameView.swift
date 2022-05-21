@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class GameView: UIViewController {
     
@@ -97,6 +98,9 @@ class GameView: UIViewController {
         game_BTN_ans3.setTitle(question.answers[2].name, for: .normal)
         game_BTN_ans4.setTitle(question.answers[3].name, for: .normal)
         
+        let uri = URL(string: question.imageLink)!
+        game_IMG_image.kf.setImage(with: uri)
+        
         qIndex += 1
     }
     
@@ -119,13 +123,37 @@ class GameView: UIViewController {
         game_LBL_score.text = ("\(score)")
     }
     
-    func colorAns(btn: UIButton) {
-        
+    func colorAns(index: Int) {
+        switch index {
+        case 1:
+            game_BTN_ans1.backgroundColor = UIColor.green
+            game_BTN_ans2.backgroundColor = UIColor.red
+            game_BTN_ans3.backgroundColor = UIColor.red
+            game_BTN_ans4.backgroundColor = UIColor.red
+        case 2:
+            game_BTN_ans1.backgroundColor = UIColor.red
+            game_BTN_ans2.backgroundColor = UIColor.green
+            game_BTN_ans3.backgroundColor = UIColor.red
+            game_BTN_ans4.backgroundColor = UIColor.red
+        case 3:
+            game_BTN_ans1.backgroundColor = UIColor.red
+            game_BTN_ans2.backgroundColor = UIColor.red
+            game_BTN_ans3.backgroundColor = UIColor.green
+            game_BTN_ans4.backgroundColor = UIColor.red
+        case 4:
+            game_BTN_ans1.backgroundColor = UIColor.red
+            game_BTN_ans2.backgroundColor = UIColor.red
+            game_BTN_ans3.backgroundColor = UIColor.red
+            game_BTN_ans4.backgroundColor = UIColor.green
+        default:
+            break
+        }
     }
     
     func checkGameOver() {
         if qIndex < 5 && mistakes < 3 {
             loadQuestion(question: questionsList[qIndex])
+            removeCol()
         }
         else {
             let vc = storyboard?.instantiateViewController(withIdentifier: "gameover") as! GameOverView
@@ -135,32 +163,40 @@ class GameView: UIViewController {
         }
     }
     
+    func removeCol() {
+        game_BTN_ans1.backgroundColor = nil
+        game_BTN_ans2.backgroundColor = nil
+        game_BTN_ans3.backgroundColor = nil
+        game_BTN_ans4.backgroundColor = nil
+    }
+    
     @IBAction func game_BTN_ans1(_ sender: Any) {
         if (checkAnswer(question: questionsList[qIndex-1], player: game_BTN_ans1.currentTitle!)) {
-            //colorAns(btn: game_BTN_ans1)
+            colorAns(index: 1)
         }
         checkGameOver()
     }
     
     @IBAction func game_BTN_ans2(_ sender: Any) {
-        checkAnswer(question: questionsList[qIndex-1], player: game_BTN_ans2.currentTitle!)
+        if (checkAnswer(question: questionsList[qIndex-1], player: game_BTN_ans1.currentTitle!)) {
+            colorAns(index: 2)
+        }
         checkGameOver()
     }
     
     @IBAction func game_BTN_ans3(_ sender: Any) {
-        checkAnswer(question: questionsList[qIndex-1], player: game_BTN_ans3.currentTitle!)
+        if (checkAnswer(question: questionsList[qIndex-1], player: game_BTN_ans1.currentTitle!)) {
+            colorAns(index: 3)
+        }
         checkGameOver()
     }
     
     @IBAction func game_BTN_ans4(_ sender: Any) {
-        checkAnswer(question: questionsList[qIndex-1], player: game_BTN_ans4.currentTitle!)
+        if (checkAnswer(question: questionsList[qIndex-1], player: game_BTN_ans1.currentTitle!)) {
+            colorAns(index: 4)
+        }
         checkGameOver()
     }
-    
-    
-    
-    
-
 }
 
 struct Question {

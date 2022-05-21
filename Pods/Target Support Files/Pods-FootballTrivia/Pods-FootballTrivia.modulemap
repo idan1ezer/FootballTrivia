@@ -1,0 +1,6 @@
+framework module Pods_FootballTrivia {
+  umbrella header "Pods-FootballTrivia-umbrella.h"
+
+  export *
+  module * { export * }
+}
