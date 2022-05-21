@@ -26,6 +26,7 @@ class HomeView: UIViewController {
         
         let vc = storyboard?.instantiateViewController(withIdentifier: "game") as! GameView
         vc.player = Home_TXT_Name.text!
+        //vc.initQuiz()
         present(vc, animated: true)
         
     }

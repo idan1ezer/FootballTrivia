@@ -9,6 +9,7 @@ import UIKit
 
 class GameOverView: UIViewController {
     
+    var player: String = ""
     var score: Int = 0
 
     override func viewDidLoad() {
