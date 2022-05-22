@@ -226,7 +226,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Good job! You have scored 100 points! Good luck on your next attemp!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PbK-Sv-Xj4" userLabel="Speech Label">
                                 <rect key="frame" x="19.5" y="500" width="375" height="100.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <color key="textColor" red="0.49803921569999998" green="0.70980392160000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.99607843137254903" green="0.88627450980392153" blue="0.77254901960784317" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GPi-rZ-Wer">
@@ -237,6 +237,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Retry"/>
+                                <connections>
+                                    <action selector="over_BTN_retry:" destination="CsO-pz-jRh" eventType="touchUpInside" id="Ank-fF-6t4"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2iM-LU-83F"/>
@@ -254,6 +257,9 @@
                             <constraint firstItem="JGe-04-7Lx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="2iM-LU-83F" secondAttribute="leading" id="zJR-aJ-vzo"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="over_LBL_speech" destination="PbK-Sv-Xj4" id="jJ3-Ik-xBu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SH6-ng-6lS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -22,9 +22,6 @@ class GameView: UIViewController {
     @IBOutlet weak var game_BTN_ans3: UIButton!
     @IBOutlet weak var game_BTN_ans4: UIButton!
     
-    //var btns: Array<UIButton> = [game_BTN_ans1, game_BTN_ans]
-    //var hearts: Array<UIImageView> = [game_IMG_heart1, game_IMG_heart2, game_IMG_heart3]
-    
     let progress = Progress(totalUnitCount: 15)
     var player: String = "Player"
     var score: Int = 0
