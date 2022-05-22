@@ -49,7 +49,7 @@ class GameView: UIViewController {
                     "https://i.ibb.co/cvGcsdf/villa.jpg",
                     "https://i.ibb.co/7G9Xd3C/zidane.jpg"]
     
-    let wrongAnswers = ["Luka Modric", "John Charles", "Hugo Sanchez", "Jairzinho", "Omar Sivori", "Paolo Rossi", "Paul Breitner", "George Weah", "Kaka", "Lev Yashin", "Gunnar Nordahl", "Kevin Keegan", "Hristo Stoichkov", "Johan Neeskens", "Xavi Hernandez", "Luis Suarez", "Karl-Heinz Rummenigge", "Andres Iniesta", "Rivelino", "Bobby Moore", "Socrates", "Sandor Kocsis", "Lothar Matthaus", "Ronaldinho", "Ruud Gullit", "Bobby Charlton", "Giuseppe Meazza", "Raymond Kopa", "Romario", "Eusebio", "Marco van Basten", "George Best", "Zico", "Franco Baresi", "Ferenc Puskas", "Gerd Muller", "Mane Garrincha", "Alfredo di Stefano", "Roberto Baggio", "Michel Platini", "Johan Cruyff", "Franz Beckenbauer", "Pele", "Karim Benzema", "Francesco Totti", "Alessandro Nesta"]
+    let wrongAnswers = ["Luka Modric", "John Charles", "Hugo Sanchez", "Jairzinho", "Omar Sivori", "Paolo Rossi", "Paul Breitner", "George Weah", "Kaka", "Lev Yashin", "Gunnar Nordahl", "Kevin Keegan", "Hristo Stoichkov", "Johan Neeskens", "Xavi Hernandez", "Luis Suarez", "Karl-Heinz Rummenigge",  "Rivelino", "Bobby Moore", "Socrates", "Sandor Kocsis", "Lothar Matthaus", "Ronaldinho", "Ruud Gullit", "Bobby Charlton", "Giuseppe Meazza", "Raymond Kopa", "Romario", "Eusebio", "Marco van Basten", "George Best", "Zico", "Franco Baresi", "Ferenc Puskas", "Gerd Muller", "Mane Garrincha", "Alfredo di Stefano", "Roberto Baggio", "Michel Platini", "Johan Cruyff", "Franz Beckenbauer", "Pele", "Karim Benzema", "Francesco Totti", "Alessandro Nesta"]
     
 
     override func viewDidLoad() {
@@ -57,8 +57,6 @@ class GameView: UIViewController {
         self.view.backgroundColor = UIColor(red: 196/255, green: 221/255, blue: 255/255, alpha: 1)
 
         initQuiz()
-        print(questionsList)
-        
     }
     
     func initQuiz() {
@@ -108,7 +106,6 @@ class GameView: UIViewController {
         if question.answers.contains(where: { $0.name == player && $0.isTrue}) {
             score += 50
             updateScore()
-            print("Good")
             return true
         }
         else {
@@ -151,7 +148,7 @@ class GameView: UIViewController {
     }
     
     func checkGameOver() {
-        if qIndex < 5 && mistakes < 3 {
+        if qIndex < 15 && mistakes < 3 {
             loadQuestion(question: questionsList[qIndex])
             removeCol()
         }
@@ -178,21 +175,21 @@ class GameView: UIViewController {
     }
     
     @IBAction func game_BTN_ans2(_ sender: Any) {
-        if (checkAnswer(question: questionsList[qIndex-1], player: game_BTN_ans1.currentTitle!)) {
+        if (checkAnswer(question: questionsList[qIndex-1], player: game_BTN_ans2.currentTitle!)) {
             colorAns(index: 2)
         }
         checkGameOver()
     }
     
     @IBAction func game_BTN_ans3(_ sender: Any) {
-        if (checkAnswer(question: questionsList[qIndex-1], player: game_BTN_ans1.currentTitle!)) {
+        if (checkAnswer(question: questionsList[qIndex-1], player: game_BTN_ans3.currentTitle!)) {
             colorAns(index: 3)
         }
         checkGameOver()
     }
     
     @IBAction func game_BTN_ans4(_ sender: Any) {
-        if (checkAnswer(question: questionsList[qIndex-1], player: game_BTN_ans1.currentTitle!)) {
+        if (checkAnswer(question: questionsList[qIndex-1], player: game_BTN_ans4.currentTitle!)) {
             colorAns(index: 4)
         }
         checkGameOver()
