@@ -20,18 +20,25 @@
                                 <rect key="frame" x="10" y="164" width="394" height="117"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guess every football player that appears in the picture. 3 wrong answer will get you diqualifyed." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ytb-Sy-Sjt" userLabel="Home_LBL_Info">
-                                <rect key="frame" x="20" y="346" width="374" height="153"/>
+                                <rect key="frame" x="14.5" y="346" width="385" height="153"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.0" green="0.11372549019607843" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="player" borderStyle="roundedRect" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OxJ-ii-rNG" userLabel="Home_TXT_Name">
-                                <rect key="frame" x="169.5" y="559" width="75" height="34"/>
+                                <rect key="frame" x="132" y="559" width="150" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Jwy-Io-Asc"/>
+                                    <constraint firstAttribute="width" constant="150" id="zCs-CD-Pdf"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j6N-BS-JHw" userLabel="Home_BTN_Start">
-                                <rect key="frame" x="179" y="643" width="56" height="31"/>
+                                <rect key="frame" x="179" y="659" width="56" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="tBP-qw-EJ2"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Start"/>
                                 <connections>
@@ -42,16 +49,17 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ytb-Sy-Sjt" secondAttribute="trailing" constant="20" id="3MI-Tl-nL2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ytb-Sy-Sjt" secondAttribute="trailing" id="3MI-Tl-nL2"/>
                             <constraint firstItem="OxJ-ii-rNG" firstAttribute="top" secondItem="ytb-Sy-Sjt" secondAttribute="bottom" constant="60" id="4vI-SN-nKG"/>
                             <constraint firstItem="FwD-WS-1Dq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BrC-N2-blN"/>
                             <constraint firstItem="j6N-BS-JHw" firstAttribute="top" secondItem="OxJ-ii-rNG" secondAttribute="bottom" constant="50" id="Itd-Sm-K7p"/>
                             <constraint firstItem="ytb-Sy-Sjt" firstAttribute="top" secondItem="FwD-WS-1Dq" secondAttribute="bottom" constant="65" id="RC9-m5-1ng"/>
                             <constraint firstItem="ytb-Sy-Sjt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RV4-Lg-63R"/>
                             <constraint firstItem="j6N-BS-JHw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="StH-L4-kCj"/>
-                            <constraint firstItem="ytb-Sy-Sjt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="csX-l4-GNj"/>
+                            <constraint firstItem="ytb-Sy-Sjt" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="csX-l4-GNj"/>
                             <constraint firstItem="FwD-WS-1Dq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="d4h-bt-0oW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FwD-WS-1Dq" secondAttribute="trailing" constant="10" id="eWJ-ow-Q3o"/>
+                            <constraint firstItem="j6N-BS-JHw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gpw-GY-Vfb"/>
                             <constraint firstItem="FwD-WS-1Dq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="120" id="phY-o9-TpK"/>
                             <constraint firstItem="OxJ-ii-rNG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tSX-CG-AYW"/>
                         </constraints>
@@ -91,7 +99,7 @@
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ljp-XE-Tfj">
                                         <rect key="frame" x="131.5" y="0.0" width="131" height="50"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sMZ-jH-2Mn">
                                         <rect key="frame" x="262.5" y="0.0" width="131.5" height="50"/>
@@ -104,8 +112,10 @@
                                     <constraint firstAttribute="height" constant="50" id="aYI-qn-wN9"/>
                                 </constraints>
                             </stackView>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="TZz-DU-hWb" userLabel="Progres">
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TZz-DU-hWb" userLabel="Progres">
                                 <rect key="frame" x="20" y="124" width="374" height="4"/>
+                                <color key="progressTintColor" red="0.0" green="0.1137254902" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="trackTintColor" red="0.49803921569999998" green="0.70980392160000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </progressView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g5F-fQ-1yM" userLabel="Image">
                                 <rect key="frame" x="30" y="176" width="354" height="354"/>
@@ -210,17 +220,21 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Over !" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JGe-04-7Lx" userLabel="GameOver Label">
                                 <rect key="frame" x="45.5" y="144" width="323.5" height="305.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="128"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.0" green="0.1137254902" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Good job! You have scored 100 points! Good luck on your next attemp!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PbK-Sv-Xj4" userLabel="Speech Label">
                                 <rect key="frame" x="19.5" y="500" width="375" height="100.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.49803921569999998" green="0.70980392160000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GPi-rZ-Wer">
-                                <rect key="frame" x="178" y="670.5" width="58.5" height="31"/>
+                                <rect key="frame" x="132" y="670.5" width="150" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="5D3-Ga-lbw"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="fDU-LL-7N7"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Retry"/>
                             </button>

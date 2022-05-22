@@ -25,6 +25,7 @@ class GameView: UIViewController {
     //var btns: Array<UIButton> = [game_BTN_ans1, game_BTN_ans]
     //var hearts: Array<UIImageView> = [game_IMG_heart1, game_IMG_heart2, game_IMG_heart3]
     
+    let progress = Progress(totalUnitCount: 15)
     var player: String = "Player"
     var score: Int = 0
     var mistakes: Int = 0
@@ -64,6 +65,7 @@ class GameView: UIViewController {
             questionsList.append(Question(imageLink: link, answers: addPossibleAnswers(correct: answer)))
         }
         loadQuestion(question: questionsList[qIndex])
+        restoreLives()
     }
     
     func addPossibleAnswers(correct: String) -> Array<Answer> {
@@ -100,6 +102,9 @@ class GameView: UIViewController {
         game_IMG_image.kf.setImage(with: uri)
         
         qIndex += 1
+        progress.completedUnitCount += 1
+        let progressFloat = Float(self.progress.fractionCompleted)
+        game_BAR_progres.setProgress(progressFloat, animated: true)
     }
     
     func checkAnswer(question: Question, player: String) -> Bool {
@@ -111,13 +116,38 @@ class GameView: UIViewController {
         else {
             score -= 10
             mistakes += 1
+            loseLives()
             updateScore()
             return false
         }
     }
     
+    func loseLives() {
+        switch mistakes {
+        case 1:
+            game_IMG_heart3.image = UIImage(named: "heart")
+        case 2:
+            game_IMG_heart2.image = UIImage(named: "heart")
+            game_IMG_heart3.image = UIImage(named: "heart")
+        case 3:
+            game_IMG_heart1.image = UIImage(named: "heart")
+            game_IMG_heart2.image = UIImage(named: "heart")
+            game_IMG_heart3.image = UIImage(named: "heart")
+        default:
+            break
+        }
+    }
+    
     func updateScore() {
         game_LBL_score.text = ("\(score)")
+    }
+    
+    func restoreLives() {
+        game_IMG_heart1.image = UIImage(named: "heart_filled")
+        game_IMG_heart2.image = UIImage(named: "heart_filled")
+        game_IMG_heart3.image = UIImage(named: "heart_filled")
+        
+        mistakes = 0
     }
     
     func colorAns(index: Int) {
